@@ -1,0 +1,52 @@
+        for(i=0; i < counter; i++)
+        {
+            printf("%d. %c %d\n", i, ready->process[i]->ID, ready->process[i]->size);
+        }
+        
+        Dequeue(ready);
+        
+        for(i=0; i < counter; i++)
+        {
+            printf("%d. %c %d\n", i, ready->process[i]->ID, ready->process[i]->size);
+        }
+        
+        temp = 'P'; temp2 = 34;
+        Add(ready, createProcess(&(temp), &(temp2)));
+        
+        for(i=0; i < counter; i++)
+        {
+            printf("%d. %c %d\n", i, ready->process[i]->ID, ready->process[i]->size);
+        }
+        
+        memory = initializeMem(memory, ready->size);
+        
+        for(i=0; i < 6; i++)
+            Dequeue(ready);
+        
+        temp = 'T'; temp2 = 99;
+        Add(ready, createProcess(&(temp), &(temp2)));
+        
+        for(i=0; i < counter; i++)
+        {
+            printf("%d. %c %d\n", i, ready->process[i]->ID, ready->process[i]->size);
+        }
+        
+        
+        
+        
+        //USED THIS TO MEASURE IF THINGS WERE ADDED WELL ENOUGH IN QUEUES OR NOT
+        
+        
+            printf("PROCESSES SO FAR:\n\n");
+            for(j=processes->head; j < processes->MAXSIZE; j++)
+            {
+                printf("%c %d\n", processes->process[j]->ID, processes->process[j]->size);
+            }
+            
+            printf("READY TO GO STILL: \n\n");
+            
+            for(j=ready->head; j < ready->MAXSIZE; j++)
+            {
+                printf("%c %d\n", ready->process[j]->ID, ready->process[j]->size);
+            }
+        
